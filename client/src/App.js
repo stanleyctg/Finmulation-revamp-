@@ -1,21 +1,16 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+// frontend/src/App.js
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import SearchStock from './Components/SearchStock.js';
 
 function App() {
-  const [message, setMessage] = useState("");
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:5555/")
-      .then((response) => {
-        setMessage(response.data.message);
-      })
-      .catch((error) => {
-        console.error("There was error fetching the data.", error);
-      });
-  }, []);
-
-  return <div>{message}</div>;
+    return (
+        <div className="App">
+            <header className="App-header">
+                <SearchStock />
+            </header>
+        </div>
+    );
 }
 
 export default App;
