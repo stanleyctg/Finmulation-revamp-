@@ -1,49 +1,61 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "bootstrap/dist/css/bootstrap.min.css";
 
+// Component to search stock
 function SearchStock() {
-  // Initialise the states
-  const [price, setPrice] = useState(null);
+  // Initialise the constants
   const [symbol, setSymbol] = useState("");
+  const [price, setPrice] = useState(null);
   const [error, setError] = useState(null);
 
-  // Create method for submission
+  // Implement the logic for submission
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // Call the route
+    // Retrieve data from server
     axios
       .post("http://localhost:5555/home", { symbol })
       .then((response) => {
         setPrice(response.data.price);
         setError(null);
       })
-      .catch((error) => {
-        setError(error);
+      .catch((err) => {
+        setError(err);
+        alert(error);
         setPrice(null);
       });
   };
-  // Return html input form
+
+  // Return the search component
   return (
     <>
-      <div>
-        <header>
-          <h1>Search Stock</h1>
+      <div className="flex flex-col items-center justify-center mt-10">
+        <div className="flex flex-row items-center">
           <form onSubmit={handleSubmit}>
             <input
-              type="text"
+              className="py-0.5 border-solid border-2 border-sky-500 rounded-full p-2 focus:outline-none"
               value={symbol}
-              onChange={(e) => setSymbol(e.target.value)}
-              placeholder="name"
+              onChange={(e) => {
+                setSymbol(e.target.value);
+                setPrice(null);
+              }}
+              placeholder="Enter symbol"
+              type="text"
             />
-            <button type="submit">Search</button>
+            <button
+              className="mx-2 bg-blue-500 hover:bg-blue-700 hover:rounded text-white font-bold py-0.5 px-4 rounded-full"
+              type="submit"
+            >
+              Search
+            </button>
           </form>
-          {price !== null && <p>Price: { price }</p>}
-          {error && <p>error</p>}
-        </header>
+        </div>
+        <div className="mt-5">
+          {price !== null && symbol !== "" ? <p>Price: {price}</p> : <p></p>}
+        </div>
       </div>
     </>
   );
 }
+
 export default SearchStock;
