@@ -1,11 +1,12 @@
 import React from "react";
-import SearchStock from "./Components/SearchStock.js";
+import SearchStock from "./Components/Home/SearchStock.js";
 
 
 function App() {
   return (
     <div>
       <SearchStock />
+
     </div>
   );
 }

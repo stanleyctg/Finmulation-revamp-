@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import SelectQuantity from "./SelectQuantity";
 
 // Component to search stock
 function SearchStock() {
@@ -33,7 +34,7 @@ function SearchStock() {
         <div className="flex flex-row items-center">
           <form onSubmit={handleSubmit}>
             <input
-              className="py-0.5 border-solid border-2 border-sky-500 rounded-full p-2 focus:outline-none"
+              className="border-solid border-2 border-sky-500 rounded-lg p-2 focus:outline-none w-64 text-center"
               value={symbol}
               onChange={(e) => {
                 setSymbol(e.target.value);
@@ -43,7 +44,7 @@ function SearchStock() {
               type="text"
             />
             <button
-              className="mx-2 bg-blue-500 hover:bg-blue-700 hover:rounded text-white font-bold py-0.5 px-4 rounded-full"
+              className="mx-2 bg-blue-500 hover:bg-blue-700 hover:rounded-lg text-white font-bold py-2 px-4 rounded-full"
               type="submit"
             >
               Search
@@ -51,7 +52,16 @@ function SearchStock() {
           </form>
         </div>
         <div className="mt-5">
-          {price !== null && symbol !== "" ? <p>Price: {price}</p> : <p></p>}
+          {price !== null && symbol !== "" ? (
+            <>
+              <SelectQuantity
+                price={price}
+                symbol={symbol.toUpperCase()}
+              />
+            </>
+          ) : (
+            <p></p>
+          )}
         </div>
       </div>
     </>
