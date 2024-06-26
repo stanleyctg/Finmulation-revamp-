@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-import SelectQuantity from "./SelectQuantity";
+// import SelectQuantity from "./SelectQuantity";
+import FlippingCard from "./FlippingCard.js";
 
 // Component to search stock
 function SearchStock() {
@@ -54,10 +55,7 @@ function SearchStock() {
         <div className="mt-5">
           {price !== null && symbol !== "" ? (
             <>
-              <SelectQuantity
-                price={price}
-                symbol={symbol.toUpperCase()}
-              />
+              <FlippingCard price={price} symbol={symbol} />
             </>
           ) : (
             <p></p>
