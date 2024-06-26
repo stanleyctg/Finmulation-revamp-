@@ -13,7 +13,7 @@ function SelectQuantity({ price, symbol }) {
   // Return component to choose quantity
   return (
     <div className="flex flex-col items-center justify-center mt-5">
-      <b className="mt-5">Symbol: {symbol}</b>
+      <b className="mt-5 text-sky-400">Symbol: {symbol}</b>
       <div className="flex flex-row items-center">
         <input
           type="number"
@@ -30,7 +30,7 @@ function SelectQuantity({ price, symbol }) {
           Buy
         </button>
       </div>
-      <div className="mt-5 text-center">
+      <div className="mt-5 text-center text-sky-300">
         Total price: ${(price * shares).toFixed(2)}
       </div>
     </div>

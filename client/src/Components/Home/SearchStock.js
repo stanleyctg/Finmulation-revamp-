@@ -34,7 +34,7 @@ function SearchStock() {
         <div className="flex flex-row items-center">
           <form onSubmit={handleSubmit}>
             <input
-              className="border-solid border-2 border-sky-500 rounded-lg p-2 focus:outline-none w-64 text-center"
+              className="border-solid border-2 border-sky-500 rounded-lg p-2 focus:outline-none w-64 text-center placeholder-gray-500"
               value={symbol}
               onChange={(e) => {
                 setSymbol(e.target.value);
