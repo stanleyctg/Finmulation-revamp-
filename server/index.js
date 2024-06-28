@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import { searchSymbol } from "./buy.js";
+import { createChart, searchSymbol } from "./home.js";
 
 // Initialise constants
 const app = express();
@@ -12,6 +12,9 @@ app.use(express.json())
 
 // Test connection
 app.post("/home", searchSymbol);
+
+app.post("/chart", createChart);
+
 
 // Listen to port
 app.listen(port, () => {

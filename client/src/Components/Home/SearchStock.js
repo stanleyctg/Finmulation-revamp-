@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 // import SelectQuantity from "./SelectQuantity";
 import FlippingCard from "./FlippingCard.js";
+import CreateChart from "./CreateChart.js";
 
 // Component to search stock
 function SearchStock() {
@@ -56,6 +57,7 @@ function SearchStock() {
           {price !== null && symbol !== "" ? (
             <>
               <FlippingCard price={price} symbol={symbol} />
+              <CreateChart symbol={symbol} />
             </>
           ) : (
             <p></p>

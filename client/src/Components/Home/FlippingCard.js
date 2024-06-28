@@ -17,7 +17,7 @@ function FlippingCard({ price, symbol }) {
   });
 
   return (
-    <div className="flex flex-row w-screen px-32">
+    <div className="flex flex-row w-screen px-32 pt-5">
       <div className={`flipping-card ${flipped ? "flipped" : ""}`}>
         <div className="flipping-card-inner mt-5">
           <div className="flipping-card-front shadow-lg bg-card3">
