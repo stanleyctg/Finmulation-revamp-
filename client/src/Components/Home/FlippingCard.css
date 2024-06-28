@@ -3,7 +3,7 @@
 .flipping-card {
     perspective: 1000px;
     width: 400px;
-    height: 250px;
+    height: 700px;
     margin: auto;
   }
   
@@ -28,8 +28,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #282b30;
-    border: 1px solid #5865f2;
+    /* background-color: #282b30; */
+    border: 1px solid;
     border-radius: 8px;
   }
   

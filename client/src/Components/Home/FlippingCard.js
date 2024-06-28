@@ -14,18 +14,41 @@ function FlippingCard({ price, symbol }) {
 
       return () => clearTimeout(timer);
     }
-  }, [price, symbol]);
+  });
 
   return (
-    <div className={`flipping-card ${flipped ? "flipped" : ""}`}>
-      <div className="flipping-card-inner mt-5">
-        <div className="flipping-card-front shadow-lg">
+    <div className="flex flex-row w-screen px-32">
+      <div className={`flipping-card ${flipped ? "flipped" : ""}`}>
+        <div className="flipping-card-inner mt-5">
+          <div className="flipping-card-front shadow-lg bg-card3">
+          </div>
+          <div className="flipping-card-back shadow-lg bg-card3">
+            {/* <SelectQuantity price={price.toFixed(2)} symbol={symbol.toUpperCase()} /> */}
+          </div>
         </div>
-        <div className="flipping-card-back shadow-lg">
-          <SelectQuantity price={price.toFixed(2)} symbol={symbol.toUpperCase()} />
+      </div>      
+
+      <div className={`flipping-card ${flipped ? "flipped" : ""}`}>
+        <div className="flipping-card-inner mt-5">
+          <div className="flipping-card-front shadow-lg bg-card1">
+          </div>
+          <div className="flipping-card-back shadow-lg bg-card1">
+            <SelectQuantity price={price.toFixed(2)} symbol={symbol.toUpperCase()} />
+          </div>
         </div>
-      </div>
+      </div>      
+
+      <div className={`flipping-card ${flipped ? "flipped" : ""}`}>
+        <div className="flipping-card-inner mt-5">
+          <div className="flipping-card-front shadow-lg bg-secondary">
+          </div>
+          <div className="flipping-card-back shadow-lg bg-secondary">
+            {/* <SelectQuantity price={price.toFixed(2)} symbol={symbol.toUpperCase()} /> */}
+          </div>
+        </div>
+      </div>      
     </div>
+
   );
 }
 

@@ -3,15 +3,15 @@ import { FaHome, FaBriefcase, FaChartLine, FaUser } from 'react-icons/fa';
 
 function Navbar() {
   return (
-    <div className="relative w-screen h-20 m-0 items-center
+    <div className="relative w-screen h-24 m-0 items-center
                     flex flex-row bg-primary text-secondary
                     shadow-lg">
-        <p className="text-3xl font-bold mx-auto ">Finmulation</p>
+        <p className="text-5xl font-bold mx-auto ">Finmulation</p>
         <div className="ml-auto flex space-x-4"></div> 
-        <NavbarIcon icon={<FaHome size="28" />} text="Home" />
-        <NavbarIcon icon={<FaBriefcase size="32" />} text="Portfolio" />
-        <NavbarIcon icon={<FaChartLine size="20" />} text="Analysis" />
-        <NavbarIcon icon={<FaUser size="20" />} text="Profile" />
+        <NavbarIcon icon={<FaHome size="40" />} text="Home" />
+        <NavbarIcon icon={<FaBriefcase size="40" />} text="Portfolio" />
+        <NavbarIcon icon={<FaChartLine size="40" />} text="Analysis" />
+        <NavbarIcon icon={<FaUser size="35" />} text="Profile" />
     </div>
   );
 }

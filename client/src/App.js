@@ -1,15 +1,16 @@
 import React from "react";
 import SearchStock from "./Components/Home/SearchStock.js";
 import Navbar from "./Components/Navbar.js";
-
+import Footer from "./Components/Footer.js";
 
 function App() {
   return (
-    <div>
+    <><div>
       <Navbar />
       <SearchStock />
-
-    </div>
+    </div><footer className="fixed bottom-1 footer">
+        <Footer />
+      </footer></>
   );
 }
 
